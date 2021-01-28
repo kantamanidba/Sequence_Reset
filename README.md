@@ -33,4 +33,4 @@ LANGUAGE plpgsql;
 
 Calling the Function:
 
-select schema_name.seq_reset('schemaname');
+select schema_name.seq_reset('schemaname'); 
