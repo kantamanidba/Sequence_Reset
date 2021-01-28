@@ -29,7 +29,7 @@ end loop;
 close seq_cursor;
 return v_sql_3;
 end; $$
-LANGUAGE plpgsql;
+LANGUAGE plpgsql; 
 
 Calling the Function:
 
