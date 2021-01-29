@@ -22,7 +22,7 @@ exit when not found;
 if rec_curs.table_name is not null then
 v_sql_1 := 'alter sequence '||rec_curs.table_schema||'.'||rec_curs.sequence_name|| ' restart with ';
 v_sql_2 := 'select coalesce(max('||rec_curs.column_name||'),0) +1 from '||rec_curs.table_schema||'.'||rec_curs.table_name;
---v_sql_3 is just for checkign which statements executed through v_sql_1
+--v_sql_3 is just for checking which statements executed through v_sql_1
 v_sql_3 := v_sql_3||E'\n'||'alter sequence '||rec_curs.table_schema||'.'||rec_curs.sequence_name|| ' restart with ';
 execute v_sql_2 into v_maxid;
 execute v_sql_1 ||v_maxid;
@@ -31,7 +31,8 @@ end loop;
 close seq_cursor;
 return v_sql_3;
 end; $$
-LANGUAGE plpgsql; 
+LANGUAGE plpgsql;
+
 
 ### Calling the Function:
 
