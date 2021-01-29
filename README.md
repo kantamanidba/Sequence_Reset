@@ -2,6 +2,8 @@
 
 **Note:**  Number(18) in following string needs to be change as per your schema_name length "left(substr(column_default,18),-12)"
 
+Below function will reset all the sequnces in a schema to resceptive column max value +1.
+
 create or replace function schema_name.seq_reset(p_schemaname text)
 RETURNS text AS $$
 declare
@@ -31,6 +33,6 @@ return v_sql_3;
 end; $$
 LANGUAGE plpgsql; 
 
-Calling the Function:
+### Calling the Function:
 
 select schema_name.seq_reset('schemaname'); 
