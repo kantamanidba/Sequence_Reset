@@ -1,6 +1,6 @@
 # Sequence_Reset procedure for entire schema@Postgresql after schema refresh:
 
-**Note:** Number(18) in following string needs to be change as per your schema_name length "left(substr(column_default,18),-12)"
+**Note:**  Number(18) in following string needs to be change as per your schema_name length "left(substr(column_default,18),-12)"
 
 create or replace function schema_name.seq_reset(p_schemaname text)
 RETURNS text AS $$
