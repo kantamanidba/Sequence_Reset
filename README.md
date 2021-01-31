@@ -14,7 +14,8 @@ v_sql_1 TEXT DEFAULT '';
 v_sql_2 TEXT DEFAULT '';
 v_sql_3 TEXT DEFAULT '';
 v_maxid integer;
-seq_cursor cursor for select table_schema,table_name,column_name,left(split_part(column_default,'.','2'),-12) sequence_name from information_schema.columns where table_schema=p_schemaname and column_default like 'nextval%' ;
+seq_cursor cursor for select table_schema,table_name,column_name,left(split_part(column_default,'.','2'),-12) sequence_name 
+from information_schema.columns where table_schema=p_schemaname and column_default like 'nextval%' ;
 begin
 open seq_cursor;
 loop
