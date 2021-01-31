@@ -1,7 +1,5 @@
 # Sequence_Reset procedure for entire schema@Postgresql after schema refresh:
 
-**Note:**  Number(18) in following string needs to be change as per your schema_name length "left(substr(column_default,18),-12)"
-
 Below function will reset all the sequnces in a schema to resceptive column max value +1.
 
 ```
